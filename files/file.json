@@ -1,0 +1,17 @@
+{
+   
+  "__comment1__": "Change NewEmail,deleteEmail",
+  "newName": "Pruebas",
+  "newLasName": "Globant",
+  "newEmail": "test_____211@test1.com",
+  "newPassword": "uS923297%/$$",
+  "oldName": "Pruebas",
+  "oldEmail": "test_____30@test1.com",
+  "oldPassword": "uS923297%/$$",
+  "deleteEmailOld": "test_____20@test1.com",
+  "deletePasswoedOld": "uS923297%/$$",
+  "deleteEmail": "test_____55@test1.com",
+  "deletePassword": "uS923297%/$$",
+  "closeEmail": "test_____31@test1.com",
+  "closePassword": "uS923297%/$$"
+}
