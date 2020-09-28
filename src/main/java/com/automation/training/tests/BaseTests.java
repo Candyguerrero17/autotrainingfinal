@@ -1,5 +1,7 @@
 package com.automation.training.tests;
 
+
+
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -20,9 +22,7 @@ public class BaseTests {
 	@Parameters({"browser"})
 	public void beforeSuite(String browser) {
 		myDriver = new MyDriver(browser);
-		
 		espnPage = new HomePageEspn(myDriver.getDriver());
-		
 	}
 	@BeforeSuite(alwaysRun=true)
 	public DateModal loadDate() {

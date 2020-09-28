@@ -33,7 +33,6 @@ public class DeleteAccountPage extends BasePage {
 
 		try {
 			getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame)));
-
 			Thread.sleep(2000);
 			linkDelete.click();
 			getWait().until(ExpectedConditions.visibilityOf(buttonDelete));

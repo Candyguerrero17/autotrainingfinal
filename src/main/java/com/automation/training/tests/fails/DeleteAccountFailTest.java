@@ -21,6 +21,6 @@ public class DeleteAccountFailTest extends BaseTests {
 		home.openProfile();
 		logIn = home.openLogIn();
 		deleteAccount =logIn.starSessionFail(loadDate().getDeleteEmailOld(), loadDate().getDeletePasswordOld());
-		Assert.assertEquals(deleteAccount.getPagetitleDeleteAcount(), Messages.ERROR_ACCOUNT_DELETED);
+		Assert.assertEquals(deleteAccount.getPagetitleDeleteAccountFail(), Messages.ERROR_ACCOUNT_DELETED);
 	}
 }
