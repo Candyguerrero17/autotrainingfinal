@@ -48,7 +48,7 @@ public class HomePageEspn extends BasePage {
 		buttonIconUser.click();
 	}
 	
-	public void closetProfile() {
+	public void closeProfile() {
 		getWait().until(ExpectedConditions.invisibilityOf(linkLogIn));
 		buttonIconUser.click();
 	}
@@ -63,7 +63,7 @@ public class HomePageEspn extends BasePage {
 		return pageTitleProfile.getText();
 	}
 
-	public void closetSession() {
+	public void closeSession() {
 		openProfileStartSession();
 		linkLogOut.click();
 	}
@@ -75,12 +75,12 @@ public class HomePageEspn extends BasePage {
 		return new DeleteAccountPage(getDriver());
 	}
 
-	public String getPageTitleClosetSession() {
+	public String getPageTitleCloseSession() {
 
-		closetProfile();
+		closeProfile();
 		return pageTitleClosetSession.getText();
 	}
-	public void justClosetSession() {
+	public void justCloseSession() {
 		linkLogOut.click();
 	}
 }

@@ -26,15 +26,17 @@ public class LogInPage extends BasePage {
 	private WebElement buttonLogIn;
 	@FindBy(css = "[ng-repeat='item in parsedItems']")
 	private WebElement textFailLogIn;
+	@FindBy(css = "[name='disneyid-iframe']")
+	private WebElement frame;
 	public NewAcountPage openRegister() {
-		getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt("disneyid-iframe")));
+		getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame)));
 		getWait().until(ExpectedConditions.elementToBeClickable(buttonSingUp));
 		buttonSingUp.click();
 		return new NewAcountPage(getDriver());
 	}
 
 	public HomePageEspn starSession(String user, String password) {
-		getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt("disneyid-iframe")));
+		getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame)));
 		getWait().until(ExpectedConditions.visibilityOf(textUser));
 		textUser.sendKeys(user);
 		textPassword.sendKeys(password);
@@ -44,7 +46,7 @@ public class LogInPage extends BasePage {
 	}
 	
 	public DeleteAccountPage  starSessionFail(String user, String password) {
-		getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt("disneyid-iframe")));
+		getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame)));
 		getWait().until(ExpectedConditions.visibilityOf(textUser));
 		textUser.sendKeys(user);
 		textPassword.sendKeys(password);

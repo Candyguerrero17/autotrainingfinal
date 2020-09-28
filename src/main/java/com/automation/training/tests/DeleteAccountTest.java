@@ -9,11 +9,12 @@ import com.automation.training.pages.HomePageEspn;
 import com.automation.training.pages.LogInPage;
 import com.automation.training.utils.text.Messages;
 
-public class DeleteAccountTest extends BaseTests{
-	
+public class DeleteAccountTest extends BaseTests {
+
 	private HomePageEspn home;
 	private LogInPage logIn;
 	private DeleteAccountPage deleteAccount;
+
 	@Test(enabled = true, description = "Delete account in www.espn.com")
 	public void testDeleteAcountEspn() {
 		home = getEspnHomePage();
@@ -22,6 +23,6 @@ public class DeleteAccountTest extends BaseTests{
 		home = logIn.starSession(loadDate().getDeleteEmail(), loadDate().getDeletePassword());
 		deleteAccount = home.delete();
 		deleteAccount.delete();
-		Assert.assertEquals(home.getPageTitleClosetSession(), Messages.CLOSET_SESSION);
+		Assert.assertEquals(deleteAccount.getPagetitleDeleteAcount(), Messages.DELETE_ACCOUNT);
 	}
 }

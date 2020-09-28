@@ -3,7 +3,7 @@
 
 <suite name="Test final" parallel="false">
 	<parameter name="browser" value="chrome" />
-	<!--test name="Start session test fail  espn">
+	<test name="Start session test fail  espn">
 		<classes>
 			<class name="com.automation.training.tests.fails.StartSessionFailEspnTest" />
 		</classes>
@@ -27,21 +27,21 @@
 		</classes>
 
 	</test>
-	<test name="New account espn">
+	<test name="New account test espn">
 		<classes>
 			<class name="com.automation.training.tests.NewAccountTest" />
 		</classes>
 
 	</test>
-	<test name="Closet session test espn">
+	<test name="Close session test espn">
 		<classes>
-			<class name="com.automation.training.tests.ClosetSessionTest" />
+			<class name="com.automation.training.tests.CloseSessionTest" />
 		</classes>
 
-	</test-->
+	</test>
 
 
-	<test name="Delete account espn">
+	<test name="Delete account test espn">
 		<classes>
 			<class name="com.automation.training.tests.DeleteAccountTest" />
 		</classes>

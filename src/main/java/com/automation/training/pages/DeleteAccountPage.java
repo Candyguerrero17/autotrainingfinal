@@ -1,7 +1,5 @@
 package com.automation.training.pages;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,26 +18,41 @@ public class DeleteAccountPage extends BasePage {
 	@FindBy(css = "[id='disneyid-wrapper']")
 	private WebElement styleActive;
 
-	@FindBy(css = "[class='btn btn-primary ng-isolate-scope']")
+	@FindBy(css = "button[did-translate='deactivate.confirmation.buttons.confirm']")
 	private WebElement buttonDelete;
 	@FindBy(css = "h2[class='title title-primary ng-isolate-scope']")
-	private WebElement pagetitleDeleteAcount;
+	private WebElement pagetitleDeleteAccountFail;
+
+	@FindBy(css = "h2[did-translate='deactivate.successful.messages.header']")
+	private WebElement pagetitleDeleteAccount;
+
+	@FindBy(css = "[name='disneyid-iframe']")
+	private WebElement frame;
 
 	public void delete() {
 
-		getWait().until(
-				ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt("disneyid-iframe")));
-	
-	
-		linkDelete.click();
-		buttonDelete.click();
-		getDriver().switchTo().defaultContent();
+		try {
+			getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame)));
 
+			Thread.sleep(2000);
+			linkDelete.click();
+			getWait().until(ExpectedConditions.visibilityOf(buttonDelete));
+			buttonDelete.click();
+
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	public String getPagetitleDeleteAccountFail() {
+		getWait().until(ExpectedConditions.visibilityOf(pagetitleDeleteAccountFail));
+		return pagetitleDeleteAccountFail.getText();
 	}
 
 	public String getPagetitleDeleteAcount() {
-		getWait().until(ExpectedConditions.visibilityOf(pagetitleDeleteAcount));
-		return pagetitleDeleteAcount.getText();
+		getWait().until(ExpectedConditions.visibilityOf(pagetitleDeleteAccount));
+		return pagetitleDeleteAccount.getText();
 	}
-
 }
