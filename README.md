@@ -28,3 +28,6 @@ mvn clean test -Dsurefire.suiteXmlFiles=Suite.xml
 Reporte
 
 The report is in the folder test-output, you have to search the file .index to see report.
+
+Information
+**Create a waitForIframeLoadAndPostTimeout method because there are times when the frame is faster than the application itself.**

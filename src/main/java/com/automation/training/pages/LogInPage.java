@@ -4,7 +4,6 @@ package com.automation.training.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LogInPage extends BasePage {
 
@@ -29,37 +28,38 @@ public class LogInPage extends BasePage {
 	@FindBy(css = "[name='disneyid-iframe']")
 	private WebElement frame;
 	public NewAcountPage openRegister() {
-		getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame)));
-		getWait().until(ExpectedConditions.elementToBeClickable(buttonSingUp));
+		
+		waitForIframeLoad(frame);
+		waitElementToBeClickable(buttonSingUp);
 		buttonSingUp.click();
 		return new NewAcountPage(getDriver());
 	}
 
 	public HomePageEspn starSession(String user, String password) {
-		getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame)));
-		getWait().until(ExpectedConditions.visibilityOf(textUser));
-		textUser.sendKeys(user);
-		textPassword.sendKeys(password);
-		buttonLogIn.click();
-		getDriver().switchTo().defaultContent();
+		infoProfile(user,password);
+		leaveIframe();
 		return new HomePageEspn(getDriver());
 	}
 	
 	public DeleteAccountPage  starSessionFail(String user, String password) {
-		getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame)));
-		getWait().until(ExpectedConditions.visibilityOf(textUser));
-		textUser.sendKeys(user);
-		textPassword.sendKeys(password);
-		buttonLogIn.click();
+		infoProfile(user,password);
 		return new DeleteAccountPage(getDriver());
 		
 	}
 
 	public String getPageTitleFailLogIn() {
-		getWait().until(ExpectedConditions.visibilityOf(textFailLogIn));
+		
+		waitVisibleElement(textFailLogIn);
 		return textFailLogIn.getText();
 	}
 
 	
+	public void infoProfile(String user, String password) {
+		waitForIframeLoad(frame);
+		waitVisibleElement(textUser);
+		textUser.sendKeys(user);
+		textPassword.sendKeys(password);
+		buttonLogIn.click();
+	}
 
 }

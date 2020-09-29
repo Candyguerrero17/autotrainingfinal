@@ -16,7 +16,7 @@ public class DeleteAccountTest extends BaseTests {
 	private DeleteAccountPage deleteAccount;
 
 	@Test(enabled = true, description = "Delete account in www.espn.com")
-	public void testDeleteAcountEspn() {
+	public void testDeleteAcountEspn() throws InterruptedException {
 		home = getEspnHomePage();
 		home.openProfile();
 		logIn = home.openLogIn();

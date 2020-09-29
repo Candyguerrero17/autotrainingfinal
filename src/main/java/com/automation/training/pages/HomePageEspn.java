@@ -3,7 +3,6 @@ package com.automation.training.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePageEspn extends BasePage {
 
@@ -12,10 +11,8 @@ public class HomePageEspn extends BasePage {
 
 	}
 
-
 	@FindBy(css = "#global-user-trigger")
 	private WebElement buttonIconUser;
-
 
 	@FindBy(css = ".user a[tref='/members/v3_1/login']")
 	private WebElement linkLogIn;
@@ -32,24 +29,14 @@ public class HomePageEspn extends BasePage {
 	@FindBy(css = ".user [tref='/members/v3_1/modifyAccount']")
 	private WebElement linkProfiles;
 
-	
-	
-
-	public void openProfileStartSession() {
-	
-			getWait().until(ExpectedConditions.invisibilityOf(linkLogOut));
-			buttonIconUser.click();	
-		
-		
-	}
-	
-	public void openProfile() {
-		getWait().until(ExpectedConditions.elementToBeClickable(buttonIconUser));
+	public void openProfileAgain(WebElement element) {
+		waitInvisibilityElement(element);
 		buttonIconUser.click();
+
 	}
-	
-	public void closeProfile() {
-		getWait().until(ExpectedConditions.invisibilityOf(linkLogIn));
+
+	public void openProfile() {
+		waitElementToBeClickable(buttonIconUser);
 		buttonIconUser.click();
 	}
 
@@ -59,28 +46,27 @@ public class HomePageEspn extends BasePage {
 	}
 
 	public String getPageTitleProfile() {
-		openProfileStartSession();
+		openProfileAgain(linkLogOut);
+
 		return pageTitleProfile.getText();
 	}
 
 	public void closeSession() {
-		openProfileStartSession();
+		openProfileAgain(linkLogOut);
 		linkLogOut.click();
 	}
 
 	public DeleteAccountPage delete() {
-		openProfileStartSession();
+		openProfileAgain(linkLogOut);
 		linkProfiles.click();
 
 		return new DeleteAccountPage(getDriver());
 	}
 
 	public String getPageTitleCloseSession() {
-
-		closeProfile();
+		openProfileAgain(linkLogIn);
 		return pageTitleClosetSession.getText();
 	}
-	public void justCloseSession() {
-		linkLogOut.click();
-	}
+
+
 }

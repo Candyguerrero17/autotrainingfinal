@@ -3,7 +3,6 @@ package com.automation.training.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class NewAcountPage extends BasePage {
 
@@ -31,8 +30,7 @@ public class NewAcountPage extends BasePage {
 	
 	
 	public void informationNewAcount(String name, String lastName, String email, String password) {
-
-		getWait().until(ExpectedConditions.visibilityOf(textFirtName));
+		waitVisibleElement(textFirtName);
 		textFirtName.sendKeys(name);
 		textLastName.sendKeys(lastName);
 		textEmail.sendKeys(email);
@@ -44,14 +42,14 @@ public class NewAcountPage extends BasePage {
 
 	public HomePageEspn sendInformation() {
 		buttonSingUp.click();
-		getDriver().switchTo().defaultContent();
+		leaveIframe();
 		return new HomePageEspn(getDriver());
 
 	}
 	
 	
 	public String getPageTextFail() {
-		getWait().until(ExpectedConditions.visibilityOf(itemTestFail));
+		waitVisibleElement(itemTestFail);
 		return itemTestFail.getText();
 	}
 }

@@ -1,7 +1,6 @@
 package com.automation.training.utils.text;
 
 public class Messages {
-
 	public static final String ERROR_EMAIL = "It looks like that email has already been used to create an account at Disney, ESPN, Marvel, or ABC. If this is your email address, just log in to your account";
 	public static final String CLOSE_SESSION = "Welcome!";
 	public static final String ERROR_START_SESSION ="The credentials you entered are incorrect.";

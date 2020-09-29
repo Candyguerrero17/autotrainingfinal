@@ -3,7 +3,8 @@ package com.automation.training.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import com.automation.training.utils.text.Intengers;
 
 public class DeleteAccountPage extends BasePage {
 
@@ -29,29 +30,24 @@ public class DeleteAccountPage extends BasePage {
 	@FindBy(css = "[name='disneyid-iframe']")
 	private WebElement frame;
 
-	public void delete() {
+	public void delete() throws InterruptedException {
 
-		try {
-			getWait().until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame)));
-			Thread.sleep(2000);
-			linkDelete.click();
-			getWait().until(ExpectedConditions.visibilityOf(buttonDelete));
-			buttonDelete.click();
-
-		} catch (InterruptedException e) {
-
-			e.printStackTrace();
-		}
+		waitForIframeLoadAndPostTimeout(frame,Intengers.THREE);
+		waitVisibleElement(linkDelete);
+		linkDelete.click();
+		waitVisibleElement(buttonDelete);
+		buttonDelete.click();
 
 	}
 
 	public String getPagetitleDeleteAccountFail() {
-		getWait().until(ExpectedConditions.visibilityOf(pagetitleDeleteAccountFail));
+		waitVisibleElement(pagetitleDeleteAccountFail);
+
 		return pagetitleDeleteAccountFail.getText();
 	}
 
 	public String getPagetitleDeleteAcount() {
-		getWait().until(ExpectedConditions.visibilityOf(pagetitleDeleteAccount));
+		waitVisibleElement(pagetitleDeleteAccount);
 		return pagetitleDeleteAccount.getText();
 	}
 }
