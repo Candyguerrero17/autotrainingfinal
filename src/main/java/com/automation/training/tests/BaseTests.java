@@ -1,44 +1,31 @@
 package com.automation.training.tests;
 
-
-
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-import com.automation.training.pages.HomePageEspn;
-import com.automation.training.utils.MyDriver;
-import com.automation.training.utils.maps.DataTest;
-import com.automation.training.utils.modals.DateModal;
+import com.automation.training.MyDriver;
+import com.automation.training.pages.WikiHomePage;
 
 public class BaseTests {
 	
-	protected  MyDriver myDriver;
+	MyDriver myDriver;
 	
-	private HomePageEspn espnPage;
+	private WikiHomePage wikiHome;
 	
-	@BeforeTest(alwaysRun=true)
+	@BeforeSuite(alwaysRun=true)
 	@Parameters({"browser"})
 	public void beforeSuite(String browser) {
 		myDriver = new MyDriver(browser);
-		espnPage = new HomePageEspn(myDriver.getDriver());
-	}
-	@BeforeSuite(alwaysRun=true)
-	public DateModal loadDate() {
-		DataTest modalD = new DataTest();
-		DateModal date = modalD.init();
-		return date;
+		wikiHome = new WikiHomePage(myDriver.getDriver());
 	}
 	
-	
-	@AfterTest(alwaysRun=true)
+	@AfterSuite(alwaysRun=true)
 	public void afterSuite() {
-		espnPage.dispose();
+		wikiHome.dispose();
 	}
 
-	public HomePageEspn getEspnHomePage() {
-		return espnPage;
+	public WikiHomePage getWikiHomePage() {
+		return wikiHome;
 	}
-	
 }

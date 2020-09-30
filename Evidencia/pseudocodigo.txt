@@ -1,0 +1,53 @@
+
+*CREAR CUENTA
+BEFORE
+Abrir navegador
+Ir a la url https://www.espn.com/?src=com
+
+ABRIR MENU PROFILE
+INGRESAR INFORMACION DE CUENTA NUEVA
+VERIFICAR CREACION EXITOSA
+
+AFTER
+Cerrar navegador
+
+
+*INICIAR SESIÓN
+BEFORE
+Abrir navegador
+Ir a la url https://www.espn.com/?src=com
+
+ABRIR MENU PROFILE
+INGRESAR INFORMACION DE CUENTA
+VERIFICAR LOGEO EXITOSO
+
+AFTER
+Cerrar navegador
+
+
+
+
+*ELIMINAR CUENTA
+BEFORE
+Abrir navegador
+Ir a la url https://www.espn.com/?src=com
+INICIAR SESION
+
+*ELIMINAR CUENTA
+VERIFICAR ELIMINACION EXITOSA
+
+AFTER
+Cerrar navegador
+
+
+*CERRAR SESIÓN.
+BEFORE
+Abrir navegador
+Ir a la url https://www.espn.com/?src=com
+INICIAR SESION
+
+CERRAR SESION
+VERIFICAR SESION CERRADA
+
+AFTER
+Cerrar navegador
