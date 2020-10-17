@@ -3,47 +3,10 @@
 
 <suite name="Test final" parallel="false">
 	<parameter name="browser" value="chrome" />
-	<!--test name="Start session test fail  espn">
-		<classes>
-			<class name="com.automation.training.tests.fails.StartSessionFailEspnTest" />
-		</classes>
-
-	</test>
-	<test name="Delete account test fail espn">
-		<classes>
-			<class name="com.automation.training.tests.fails.DeleteAccountFailTest" />
-		</classes>
-
-	</test>
-	<test name="New account test fail  espn">
-		<classes>
-			<class name="com.automation.training.tests.fails.NewAccountFailTest" />
-		</classes>
-
-	</test>
-	<test name="Start session espn">
-		<classes>
-			<class name="com.automation.training.tests.StartSessionEspnTest" />
-		</classes>
-
-	</test>
-	<test name="New account espn">
-		<classes>
-			<class name="com.automation.training.tests.NewAccountTest" />
-		</classes>
-
-	</test>
-	<test name="Closet session test espn">
-		<classes>
-			<class name="com.automation.training.tests.ClosetSessionTest" />
-		</classes>
-
-	</test-->
-
 
 	<test name="Delete account espn">
 		<classes>
-			<class name="com.automation.training.tests.DeleteAccountTest" />
+			<class name="com.automation.training.tests.BookingTest" />
 		</classes>
 
 	</test>
