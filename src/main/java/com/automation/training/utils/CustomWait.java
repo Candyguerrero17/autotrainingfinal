@@ -30,6 +30,13 @@ public class CustomWait {
 		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(element)));
 
 	}
+	
+
+	public void waitVisbleFrame(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element)));
+
+	}
 
 	public void waitVisibleElement(WebDriver driver, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 30);

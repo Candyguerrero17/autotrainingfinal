@@ -1,4 +1,4 @@
-package com.automation.training.pages;
+package com.automation.training.utils;
 
 import java.util.ArrayList;
 
@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
-import com.automation.training.utils.CustomWait;
 
 public abstract class BasePage {
 	
@@ -50,15 +48,7 @@ public abstract class BasePage {
 
 	}
 
-	public void multipleClick(WebElement element, int amount) {
 
-		for (int i = 0; i < amount; i++) {
-
-			element.click();
-
-		}
-
-	}
 
 	public void selectOptionText(WebElement element, String text) {
 
@@ -88,6 +78,5 @@ public abstract class BasePage {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element);
 		actions.perform();
-		customWait.waitInSeconds(3);
 	}
 }

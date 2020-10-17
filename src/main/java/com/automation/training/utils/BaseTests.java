@@ -1,19 +1,10 @@
-package com.automation.training.tests;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
+package com.automation.training.utils;
 
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import com.automation.training.pages.BookingHome;
-import com.automation.training.utils.MyDriver;
-import com.automation.training.utils.maps.DataTest;
-import com.automation.training.utils.modals.DateModal;
 
 public class BaseTests{
 	
@@ -29,13 +20,7 @@ public class BaseTests{
 		bookingPage = new BookingHome(myDriver.getDriver());
 		
 	}
-	@BeforeSuite(alwaysRun=true)
-	public DateModal loadDate() {
-		DataTest modalD = new DataTest();
-		DateModal date = modalD.init();
-		return date;
-	}
-	
+
 	
 	@AfterTest(alwaysRun=true)
 	public void afterSuite() {
