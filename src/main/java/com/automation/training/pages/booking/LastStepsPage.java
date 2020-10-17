@@ -1,4 +1,4 @@
-package com.automation.training.pages;
+package com.automation.training.pages.booking;
 
 import static com.automation.training.utils.text.Messages.BAD_NUMBER;
 import static com.automation.training.utils.text.Messages.PHONE_HELP;

@@ -1,24 +1,23 @@
-package com.automation.training.tests;
+package com.automation.training.tests.booking;
 
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
-import com.automation.training.pages.BookingHome;
-import com.automation.training.pages.HotelFoundPage;
-import com.automation.training.pages.HotelReservationPage;
-import com.automation.training.pages.LastStepsPage;
-import com.automation.training.pages.WriteData;
+import com.automation.training.pages.booking.BookingHome;
+import com.automation.training.pages.booking.HotelFoundPage;
+import com.automation.training.pages.booking.HotelReservationPage;
+import com.automation.training.pages.booking.LastStepsPage;
+import com.automation.training.pages.booking.WriteData;
 import com.automation.training.utils.BaseTests;
 import com.automation.training.utils.modals.RervationModel;
 
 public class BookingTest extends BaseTests {
-	BookingHome booking;
-	HotelFoundPage hotelFound;
-	WriteData data;
-
-	HotelReservationPage hotelResevation;
-	LastStepsPage lastPage;
+	private BookingHome booking;
+	private HotelFoundPage hotelFound;
+	private WriteData data;
+	private HotelReservationPage hotelResevation;
+	private LastStepsPage lastPage;
 
 	@Test
 	public void verifyReservationOfHotel() {

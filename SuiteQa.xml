@@ -2,10 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Test final" parallel="false">
-	<parameter name="part" value="1" />
-	<test name="Hotel reserver">
+	<parameter name="part" value="2" />
+	<test name="Add product">
 		<classes>
-			<class name="com.automation.training.tests.booking.BookingTest" />
+			<class name="com.automation.training.tests.qapayground.QaTest" />
 		</classes>
 	</test>
 </suite>

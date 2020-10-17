@@ -31,14 +31,12 @@ public abstract class BasePage {
 
 	public void type(WebElement element, String text) {
 		element.sendKeys(text);
-
 	}
 
-	public void typeAndEnter(WebElement element, String text) {
+	public void typeAndEnter(WebElement element, WebElement elementWait, String text) {
 		element.sendKeys(text);
-		customWait.waitInSeconds(1);
+		customWait.waitVisibleElement(driver, elementWait);
 		element.sendKeys(Keys.DOWN);
-		customWait.waitInSeconds(1);
 		element.sendKeys(Keys.ENTER);
 
 	}
@@ -72,7 +70,10 @@ public abstract class BasePage {
 
 		return element.getText();
 	}
+	public String getAttribute(WebElement element) {
 
+		return element.getAttribute("value");
+	}
 	public void moveToElement(WebElement element) {
 		
 		Actions actions = new Actions(driver);

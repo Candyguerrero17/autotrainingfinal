@@ -1,4 +1,4 @@
-package com.automation.training.pages;
+package com.automation.training.pages.booking;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

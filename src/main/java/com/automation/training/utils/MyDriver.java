@@ -13,26 +13,17 @@ public class MyDriver {
 
 	private WebDriver driver;
 	private static final String DRIVER = "DRIVER";
-	private static final String URLBASE = "URLBASE";
-	private static final String  FIREFOX= "firefox";
-	private static final String CHORME = "chrome";
 	Map<String, String> urlsEnviroment = UrlMaps.urlInit();
-	public MyDriver(String browser) {
-		switch (browser) {
-		case FIREFOX:
-			break;
-		case CHORME:
-			System.setProperty("webdriver.chrome.driver", urlsEnviroment.get(DRIVER));
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-			driver.manage().deleteAllCookies();
-			driver.get(urlsEnviroment.get(URLBASE));
-			break;
-		default:
-			break;
-		}
-	}
 
+
+	public void startDriverConnection() {
+		System.setProperty("webdriver.chrome.driver", urlsEnviroment.get(DRIVER));
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+	
+	}
+	
 	public WebDriver getDriver() {
 		return this.driver;
 	}

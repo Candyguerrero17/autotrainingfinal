@@ -1,4 +1,9 @@
-package com.automation.training.pages;
+package com.automation.training.pages.booking;
+
+import static com.automation.training.utils.text.TextData.AGE_CHILDREN;
+import static com.automation.training.utils.text.TextData.COUNTRY;
+import static com.automation.training.utils.text.TextData.FORMAT_DATA;
+import static com.automation.training.utils.text.TextData.ZONE_ID;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -7,26 +12,23 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import org.openqa.selenium.support.FindBy;
 
 import com.automation.training.utils.BasePage;
-
-import static com.automation.training.utils.text.TextData.COUNTRY;
-import static com.automation.training.utils.text.TextData.AGE_CHILDREN;
-
-import static com.automation.training.utils.text.TextData.FORMAT_DATA;
-import static com.automation.training.utils.text.TextData.ZONE_ID;
+import com.automation.training.utils.maps.UrlMaps;
 
 /**
  * Description:Page home of booking
  *
  */
 public class BookingHome extends BasePage {
+	Map<String, String> urlsEnviroment = UrlMaps.urlInit();
+	private static final String URLBASE = "URLBASE";
 	/**
 	 * Constructor method.
 	 * 
@@ -35,6 +37,7 @@ public class BookingHome extends BasePage {
 	 */
 	public BookingHome(WebDriver pDriver) {
 		super(pDriver);
+		pDriver.get(urlsEnviroment.get(URLBASE));
 
 	}
 	// WebElements
@@ -59,7 +62,8 @@ public class BookingHome extends BasePage {
 	private List<WebElement> nextMouth;
 	@FindBy(css = "[data-bui-ref=\"calendar-next\"]")
 	private WebElement next;
-
+	@FindBy(css = "ul[role=\"listbox\"]>li:first-child")
+	private WebElement firstCountry;
 	
 
 	/**
@@ -71,7 +75,7 @@ public class BookingHome extends BasePage {
 	public HotelFoundPage searchHotel() {
 
 		customWait.waitVisbleElementWithRefreshsPage(getDriver(), searchDestination);
-		typeAndEnter(searchDestination, COUNTRY);
+		typeAndEnter(searchDestination,firstCountry, COUNTRY);
 		chooseData(getAllData(30), getMonth(30));
 		chooseData(getAllData(44), getMonth(44));
 		click(inputGuest);
