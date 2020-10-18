@@ -1,5 +1,10 @@
 package com.automation.training.utils.text;
-
+/**
+ * Class of constans of string to booking test
+ * 
+ * @author 
+ *
+ */
 public class Messages {
 
 	public static final String  DESCRIPTION_OF_RESERVER= "14 noches, 3 adultos, 1 niño";

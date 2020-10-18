@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.automation.training.utils.BasePage;
+import com.automation.training.utils.pages.BasePage;
 
 import static com.automation.training.utils.text.Messages.DESCRIPTION_OF_RESERVER;
 
-import static com.automation.training.utils.text.TextData.NUMBER_ROOM;
+import static com.automation.training.utils.text.DataBooking.NUMBER_ROOM;
 /**
  * Description:Hotel reservation 
  *

@@ -1,4 +1,4 @@
-package com.automation.training.utils;
+package com.automation.training.utils.others;
 
 import java.io.FileInputStream;
 import java.io.IOException;

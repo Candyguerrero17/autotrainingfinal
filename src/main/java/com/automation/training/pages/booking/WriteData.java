@@ -4,10 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.automation.training.utils.BasePage;
-import static com.automation.training.utils.text.TextData.FIRST_NAME;
-import static com.automation.training.utils.text.TextData.LAST_NAME;
-import static com.automation.training.utils.text.TextData.EMAIL;
+import com.automation.training.utils.pages.BasePage;
+
+import static com.automation.training.utils.text.DataBooking.FIRST_NAME;
+import static com.automation.training.utils.text.DataBooking.LAST_NAME;
+import static com.automation.training.utils.text.DataBooking.EMAIL;
 
 /**
  * Description: Write data to finish process.

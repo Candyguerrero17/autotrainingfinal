@@ -81,7 +81,7 @@
 					<testFailureIgnore>true</testFailureIgnore>
 					<reportsDirectory>./test-output</reportsDirectory>
 					<suiteXmlFiles>
-						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+						<suiteXmlFile>${suiteFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

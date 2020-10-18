@@ -1,5 +1,6 @@
 package com.automation.training.tests.booking;
 
+import static com.automation.training.utils.text.ConfigProperties.URLBASE;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
@@ -9,8 +10,8 @@ import com.automation.training.pages.booking.HotelFoundPage;
 import com.automation.training.pages.booking.HotelReservationPage;
 import com.automation.training.pages.booking.LastStepsPage;
 import com.automation.training.pages.booking.WriteData;
-import com.automation.training.utils.BaseTests;
 import com.automation.training.utils.modals.RervationModel;
+import com.automation.training.utils.tests.BaseTests;
 
 public class BookingTest extends BaseTests {
 	private BookingHome booking;
@@ -18,10 +19,18 @@ public class BookingTest extends BaseTests {
 	private WriteData data;
 	private HotelReservationPage hotelResevation;
 	private LastStepsPage lastPage;
-
+	/**
+	 * Search Holtel in booking.com 
+	 * Enter information
+	 * And verity that the last page is ok.
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
 	@Test
 	public void verifyReservationOfHotel() {
 		booking = getBookingHomePage();
+		booking.openBrowser(URLBASE);
 		hotelFound = booking.searchHotel();
 		hotelFound.filter();
 		assertTrue(hotelFound.isVisibleNameHotel());

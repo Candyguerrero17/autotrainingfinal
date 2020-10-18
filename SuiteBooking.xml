@@ -2,6 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Test final" parallel="false">
+	<listeners>
+		<listener class-name="com.automation.training.utils.others.Listener" />
+	</listeners>
 	<parameter name="part" value="1" />
 	<test name="Hotel reserver">
 		<classes>

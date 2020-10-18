@@ -1,4 +1,4 @@
-package com.automation.training.utils;
+package com.automation.training.utils.others;
 
 import java.util.Map;
 
@@ -15,15 +15,20 @@ public class MyDriver {
 	private static final String DRIVER = "DRIVER";
 	Map<String, String> urlsEnviroment = UrlMaps.urlInit();
 
-
+	/**
+	 * Set properties of driver and start ChromeDriver
+	 * 
+	 */
 	public void startDriverConnection() {
 		System.setProperty("webdriver.chrome.driver", urlsEnviroment.get(DRIVER));
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
 	
 	}
-	
+	/**
+	 * Return WebDriver
+	 * @return WebDriver
+	 */
 	public WebDriver getDriver() {
 		return this.driver;
 	}

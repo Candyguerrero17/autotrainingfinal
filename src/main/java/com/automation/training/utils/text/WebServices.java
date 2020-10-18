@@ -1,17 +1,12 @@
-package com.automation.training.utils;
-
-
-
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-
-
-public class BaseWebServices {
-	protected RequestSpecification request = RestAssured.with();
-	protected Response response;
-	String body ="{\r\n" + 
+package com.automation.training.utils.text;
+/**
+ * Class of constans of string to web services
+ * 
+ * @author 
+ *
+ */
+public class WebServices {
+	public static final String  BODY ="{\r\n" + 
 			"  \"name\": \"CandyGuerrero\",\r\n" + 
 			"  \"type\": \"simple\",\r\n" + 
 			"  \"regular_price\": \"21.99\",\r\n" + 
@@ -34,19 +29,13 @@ public class BaseWebServices {
 			"    }\r\n" + 
 			"  ]\r\n" + 
 			"}";
-	public int requestPostWithtAuthorization() {
-
-		return request.given().header("Authorization", "Basic " + "4oCLc2hvcG1hbmFnZXI64oCLIOKAi2F4WTIgcmltYyBTek85IGNvYmYgQVpCdyBOTG5Y").contentType(ContentType.JSON)
-				.body(body).when()
-				.post("http://34.205.174.166/wp-json/wc/v3/products").then().extract().path("id");
-
-	}
 	
-	public Response requestDeleteWithtAuthorization(int id) {
-
-		return 		request.given().contentType(ContentType.JSON)
-		.delete("http://34.205.174.166/wp-json/wc/v3/products/"+id+"?force=true");
-
-	}
+	public static final String  TOKEN = "4oCLc2hvcG1hbmFnZXI64oCLIOKAi2F4WTIgcmltYyBTek85IGNvYmYgQVpCdyBOTG5Y";
+	public static final String AUTHORIZATION= "Authorization";
+	public static final String BASIC = "Basic " ;
+	public static final String BASE_POST = "http://34.205.174.166/wp-json/wc/v3/products";
+	public static final String ID = "id";
+	public static final String  DELETE_FIRST= "http://34.205.174.166/wp-json/wc/v3/products/";
+	public static final String  DELETE_SECOND= "?force=true";
 	
 }

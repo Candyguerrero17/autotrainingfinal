@@ -3,18 +3,18 @@ package com.automation.training.pages.booking;
 import static com.automation.training.utils.text.Messages.BAD_NUMBER;
 import static com.automation.training.utils.text.Messages.PHONE_HELP;
 import static com.automation.training.utils.text.Messages.REQUEST_FIELDS;
-import static com.automation.training.utils.text.TextData.CVC_CARD;
-import static com.automation.training.utils.text.TextData.EMAIL;
-import static com.automation.training.utils.text.TextData.FIRST_NAME;
-import static com.automation.training.utils.text.TextData.NAME_CARD;
-import static com.automation.training.utils.text.TextData.NUMBER_CARD;
-import static com.automation.training.utils.text.TextData.NUMBER_PHONE;
+import static com.automation.training.utils.text.DataBooking.CVC_CARD;
+import static com.automation.training.utils.text.DataBooking.EMAIL;
+import static com.automation.training.utils.text.DataBooking.FIRST_NAME;
+import static com.automation.training.utils.text.DataBooking.NAME_CARD;
+import static com.automation.training.utils.text.DataBooking.NUMBER_CARD;
+import static com.automation.training.utils.text.DataBooking.NUMBER_PHONE;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.automation.training.utils.BasePage;
+import com.automation.training.utils.pages.BasePage;
 /**
  * Description:Last steps to reserve
  *

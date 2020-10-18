@@ -1,6 +1,11 @@
 package com.automation.training.utils.text;
-
-public class TextData {
+/**
+ * Class of constans of string to booking test
+ * 
+ * @author 
+ *
+ */
+public class DataBooking {
 
 	public static final String COUNTRY = "Bogotá";
 	public static final String AGE_CHILDREN = "9 años";
@@ -14,5 +19,7 @@ public class TextData {
 	public static final String NAME_CARD = "MasterCard";
 	public static final String CVC_CARD = "123";
 	public static final String NUMBER_CARD = "12345";
+	
+
 
 }

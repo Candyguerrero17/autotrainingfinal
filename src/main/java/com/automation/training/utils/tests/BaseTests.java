@@ -1,4 +1,4 @@
-package com.automation.training.utils;
+package com.automation.training.utils.tests;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -6,6 +6,8 @@ import org.testng.annotations.Parameters;
 
 import com.automation.training.pages.booking.BookingHome;
 import com.automation.training.pages.qa.QaProductPage;
+import com.automation.training.utils.others.MyDriver;
+import com.automation.training.utils.pages.BaseWebServices;
 
 public class BaseTests {
 
@@ -14,6 +16,11 @@ public class BaseTests {
 	private QaProductPage qaPage;
 	protected BaseWebServices baseweb = new BaseWebServices();
 
+	/**
+	 * Before of suite start driver and send.
+	 * 
+	 * @param part : String
+	 */
 	@BeforeSuite(alwaysRun = true)
 	@Parameters({ "part" })
 	public void beforeSuite(String part) {
@@ -31,9 +38,15 @@ public class BaseTests {
 		}
 
 	}
+
+	/**
+	 * After of suite closet driver.
+	 * 
+	 * @param part : String
+	 */
 	@Parameters({ "part" })
 	@AfterSuite(alwaysRun = true)
-	public void afterSuite(String part) {		
+	public void afterSuite(String part) {
 		switch (part) {
 		case "1":
 			bookingPage.dispose();
@@ -46,10 +59,20 @@ public class BaseTests {
 		}
 	}
 
+	/**
+	 * Return a bookingPage
+	 * 
+	 * @return BookingHome : String
+	 */
 	public BookingHome getBookingHomePage() {
 		return bookingPage;
 	}
 
+	/**
+	 * Return a qaPage
+	 * 
+	 * @return QaProductPage : String
+	 */
 	public QaProductPage getQaProductPage() {
 		return qaPage;
 	}

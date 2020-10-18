@@ -1,5 +1,10 @@
 package com.automation.training.utils.modals;
-
+/**
+ * Class get and set price and name of hotel.
+ * 
+ * @author 
+ *
+ */
 public class RervationModel {
 
 	private String nameHotel;

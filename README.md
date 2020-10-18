@@ -21,8 +21,9 @@ You must add the path webdriver, in the file file//config.properties and change 
 
 Then the command can be executed:
 
-mvn clean install -DskipTests
-mvn clean test -Dsurefire.suiteXmlFiles=Suite.xml
+*mvn clean install -DskipTests
+*mvn clean test -DsuiteFile=SuiteBooking.xml
+*mvn clean test -DsuiteFile=SuiteQa.xml
 
 Reporte
 

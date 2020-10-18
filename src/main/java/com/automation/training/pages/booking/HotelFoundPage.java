@@ -4,8 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.automation.training.utils.BasePage;
 import com.automation.training.utils.modals.RervationModel;
+import com.automation.training.utils.pages.BasePage;
 
 /**
  * Description:Hotel found to select second option
@@ -86,8 +86,8 @@ public class HotelFoundPage extends BasePage {
 	public void bannerPresente() {
 		customWait.waitVisibleElement(getDriver(), banner);
 		if (banner.isEnabled()) {
-			customWait.waitInSeconds(2);
 			click(banner);
+			customWait.waitInvisibilityElement(getDriver(), banner);
 		}
 
 	}
