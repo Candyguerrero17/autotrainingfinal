@@ -16,6 +16,8 @@ import com.automation.training.utils.pages.BasePage;
  *
  */
 public class BookingHome extends BasePage {
+	private static final int CHECKIN = 30;
+	private static final int CHECKOUT = 44;
 
 	/**
 	 * Constructor method.
@@ -63,8 +65,8 @@ public class BookingHome extends BasePage {
 
 		customWait.waitVisbleElementWithRefreshsPage(getDriver(), searchDestination);
 		typeAndEnter(searchDestination, firstCountry, COUNTRY);
-		chooseData(getAllData(30), getMonth(30), nextMouth, next);
-		chooseData(getAllData(44), getMonth(44), nextMouth, next);
+		chooseData(getAllData(CHECKIN), getMonth(CHECKIN), nextMouth, next);
+		chooseData(getAllData(CHECKOUT), getMonth(CHECKOUT), nextMouth, next);
 		click(inputGuest);
 		click(buttonAddAdultos);
 		click(buttonAddNinos);
