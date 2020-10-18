@@ -14,10 +14,16 @@ public class DeleteAccountTest extends BaseTests {
 	private HomePageEspn home;
 	private LogInPage logIn;
 	private DeleteAccountPage deleteAccount;
-
+	/**
+	 * Verify delete session
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
 	@Test(enabled = true, description = "Delete account in www.espn.com")
-	public void testDeleteAcountEspn() throws InterruptedException {
+	public void verifyDeleteAcountEspntest() throws InterruptedException {
 		home = getEspnHomePage();
+		home.openBrowser(URLBASE);
 		home.openProfile();
 		logIn = home.openLogIn();
 		home = logIn.starSession(loadDate().getDeleteEmail(), loadDate().getDeletePassword());

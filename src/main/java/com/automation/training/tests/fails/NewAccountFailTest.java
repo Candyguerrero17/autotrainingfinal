@@ -16,11 +16,17 @@ public class NewAccountFailTest extends BaseTests{
 	private HomePageEspn home;
 	private LogInPage logIn;
 	private NewAcountPage newAcount;
-
+	/**
+	 * Verify that create account with email existing is imposible
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
 	
 	@Test(description = "Test fail with email old in www.espn.com")
-	public void testFailNewAcountEspn() {
+	public void verifyFailNewAcountEspnTest() {
 		home = getEspnHomePage();
+		home.openBrowser(URLBASE);
 		home.openProfile();
 		logIn = home.openLogIn();
 		newAcount = logIn.openRegister();

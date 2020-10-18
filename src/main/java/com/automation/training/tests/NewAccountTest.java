@@ -18,10 +18,16 @@ public class NewAccountTest extends BaseTests {
 	private LogInPage logIn;
 	private NewAcountPage newAcount;
 
-
+	/**
+	 * Verify create account
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
 	@Test(priority = 0,description = "Create new account in www.espn.com")
-	public void testNewAcountEspn() throws IOException, ParseException {
+	public void verifyNewAcountEspnTest() throws IOException, ParseException {
 		home = getEspnHomePage();
+		home.openBrowser(URLBASE);
 		home.openProfile();
 		logIn = home.openLogIn();
 		newAcount = logIn.openRegister();

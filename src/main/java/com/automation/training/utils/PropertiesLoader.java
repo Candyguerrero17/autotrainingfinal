@@ -7,7 +7,12 @@ import java.util.Enumeration;
 import java.util.Properties;
 
 import com.automation.training.utils.text.Urls;
-
+/**
+ * Class of load config.properties
+ * 
+ * @author 
+ *
+ */
 public class PropertiesLoader {
 
 	private static PropertiesLoader instance;

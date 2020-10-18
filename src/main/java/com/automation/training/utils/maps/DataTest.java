@@ -8,7 +8,12 @@ import com.automation.training.utils.PropertiesJson;
 import com.automation.training.utils.modals.DateModal;
 import com.automation.training.utils.text.TextDate;
 import com.automation.training.utils.text.Urls;
-
+/**
+ * Class for return info of json
+ * 
+ * @author 
+ *
+ */
 public class DataTest {
 	PropertiesJson json = new PropertiesJson();
 	DateModal date = new DateModal();

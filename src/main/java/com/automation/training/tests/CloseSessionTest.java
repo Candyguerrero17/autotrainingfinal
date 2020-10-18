@@ -13,10 +13,16 @@ import com.automation.training.utils.text.Messages;
 public class CloseSessionTest extends BaseTests {
 	private HomePageEspn home;
 	private LogInPage logIn;
-	
+	/**
+	 * Verify close session
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
 	@Test(enabled = true, description = "Close session in www.espn.com")
-	public void testCloseSessionEspn() {
+	public void verifyCloseSessionEspnTest() {
 		home = getEspnHomePage();
+		home.openBrowser(URLBASE);
 		home.openProfile();
 		logIn = home.openLogIn();
 		home = logIn.starSession(loadDate().getCloseEmail(), loadDate().getClosePassword());

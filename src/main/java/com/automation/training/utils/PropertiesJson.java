@@ -1,6 +1,11 @@
 package com.automation.training.utils;
 
-
+/**
+ * Class of load json
+ * 
+ * @author 
+ *
+ */
 
 import java.io.FileInputStream;
 

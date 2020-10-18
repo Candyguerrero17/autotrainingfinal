@@ -4,7 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.automation.training.utils.PropertiesLoader;
-
+/**
+ * Class for return info of config.properties
+ * 
+ * @author 
+ *
+ */
 public class UrlMaps {
 	  private UrlMaps() {
 		    throw new IllegalStateException("Utility class");

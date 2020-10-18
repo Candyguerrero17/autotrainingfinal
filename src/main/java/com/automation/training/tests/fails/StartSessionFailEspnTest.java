@@ -14,11 +14,17 @@ public class StartSessionFailEspnTest extends BaseTests{
 	
 	private HomePageEspn home;
 	private LogInPage logIn;
-
+	/**
+	 * Verify that start session account with email existing is imposible
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
 
 	@Test(enabled = true, description = "Start session with new email in www.espn.com")
-	public void testStartSessionWithNewEmailEspn() {
+	public void verifyStartSessionWithNewEmailEspnTest() {
 		home = getEspnHomePage();
+		home.openBrowser(URLBASE);
 		home.openProfile();
 		logIn = home.openLogIn();
 		logIn.starSessionFail(loadDate().getNewEmail(), loadDate().getNewPassword());

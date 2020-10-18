@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Test final" parallel="false">
-	<parameter name="browser" value="chrome" />
+
 	<test name="Start session test fail  espn">
 		<classes>
 			<class name="com.automation.training.tests.fails.StartSessionFailEspnTest" />

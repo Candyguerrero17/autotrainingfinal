@@ -1,5 +1,10 @@
 package com.automation.training.utils.modals;
-
+/**
+ * Class pojo
+ * 
+ * @author 
+ *
+ */
 public class DateModal {
 
 	public String getNewName() {

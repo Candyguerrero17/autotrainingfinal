@@ -15,9 +15,16 @@ public class DeleteAccountFailTest extends BaseTests {
 	private LogInPage logIn;
 	private DeleteAccountPage deleteAccount;
 
+	/**
+	 * Verify that account not existing is imposible delete
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
 	@Test(enabled = true, description = "Delete fail account in www.espn.com")
-	public void testFailDeleteAcountEspn() {
+	public void verifyFailDeleteAcountEspnTest() {
 		home = getEspnHomePage();
+		home.openBrowser(URLBASE);
 		home.openProfile();
 		logIn = home.openLogIn();
 		deleteAccount =logIn.starSessionFail(loadDate().getDeleteEmailOld(), loadDate().getDeletePasswordOld());

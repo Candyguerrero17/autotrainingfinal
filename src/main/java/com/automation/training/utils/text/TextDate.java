@@ -1,5 +1,10 @@
 package com.automation.training.utils.text;
-
+/**
+ * Class of constans
+ * 
+ * @author 
+ *
+ */
 public class TextDate {
 
 	public static final String NEW_NAME = "newName";
